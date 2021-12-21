@@ -8,7 +8,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] Transform[] _muzzle;
     [SerializeField] GameObject _bullet;
 
-    [SerializeField]     int _playerHp;
+    public IntReactiveProperty _hp = new IntReactiveProperty();
+    //[SerializeField]     int _playerHp;
     [SerializeField] int _shootIntervalFrame;
 
     [SerializeField] bool _levelUp;
