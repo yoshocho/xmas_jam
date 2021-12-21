@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class MuzzleItem : ItemBase
 {
-    [SerializeField, Tooltip("プレイヤーのPlayerScript")]
-    PlayerScript _player = default;
 
     protected override void Excute()
     {
-        _player._levelUp = true;
+        _playerScript._levelUp = true;
+    }
+    protected override void TimeUp()
+    {
+        _playerScript._levelUp = false;
+        Destroy(this.gameObject);
     }
 
 }
