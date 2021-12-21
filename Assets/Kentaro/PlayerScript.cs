@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour,IDamage
 {
     [SerializeField] Transform[] _muzzle;
     [SerializeField] GameObject _bullet;
@@ -57,5 +57,10 @@ public class PlayerScript : MonoBehaviour
                 Instantiate(_bullet, _muzzle[i].position, _muzzle[i].rotation);
             }
         }
+    }
+
+    public void AddDamage(int damage)
+    {
+        _hp.Value -= damage;
     }
 }
