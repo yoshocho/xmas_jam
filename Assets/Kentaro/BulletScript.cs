@@ -18,8 +18,11 @@ public class BulletScript : MonoBehaviour
         _rb2b.velocity = new Vector2(0, _shotSpeed);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(collision.gameObject.CompareTag(""))
+        {
+            Destroy(gameObject);
+        }
     }
 }
