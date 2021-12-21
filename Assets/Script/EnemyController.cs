@@ -10,9 +10,16 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //もしPlayerの弾だったら
-        if (collision.tag =="PlayerBullet")
+        if (collision.gameObject.tag == "Player")
         {
+            var player = collision.gameObject.GetComponent<IDamage>();
+            player.AddDamage(1);
+        }
+
+        //もしPlayerの弾だったら
+        if (collision.gameObject.tag =="PlayerBullet")
+        {
+            Debug.Log("Hit");
             //残機を減らす
             _enemyLife -= 1;
             Destroy(collision.gameObject);
@@ -29,7 +36,7 @@ public class EnemyController : MonoBehaviour
             }
             
         }
-        if (collision.tag =="End")
+        if (collision.gameObject.tag =="End")
         {
             Destroy(this.gameObject);
         }

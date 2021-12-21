@@ -3,18 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
-public class PlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour,IDamage
 {
     [SerializeField] Transform[] _muzzle;
     [SerializeField] GameObject _bullet;
+    //[SerializeField] int _playerHp;
 
-    [SerializeField] int _playerHp;
+    public IntReactiveProperty _hp = new IntReactiveProperty();
+
     [SerializeField] int _shootIntervalFrame;
 
     [SerializeField] bool _levelUp;
 
     [SerializeField] float _playerSpeed = 10;
     Rigidbody2D _rb2d;
+
+    //public int PlayerHp { get => _playerHp; set => _playerHp = value; }
 
 
     // Start is called before the first frame update
@@ -56,5 +60,9 @@ public class PlayerScript : MonoBehaviour
                 Instantiate(_bullet, _muzzle[i].position, _muzzle[i].rotation);
             }
         }
+    }
+    public void AddDamage(int damage)
+    {
+        _hp.Value -= damage;
     }
 }
