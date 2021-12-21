@@ -10,11 +10,11 @@ public class PlayerScript : MonoBehaviour
 
     public IntReactiveProperty _hp = new IntReactiveProperty();
     //[SerializeField]     int _playerHp;
-    [SerializeField] int _shootIntervalFrame;
+    [SerializeField]public int _shootIntervalFrame;
 
-    [SerializeField] bool _levelUp;
+    [SerializeField]public bool _levelUp;
 
-    [SerializeField] float _playerSpeed = 10;
+    [SerializeField]public float _playerSpeed = 10;
     Rigidbody2D _rb2d;
 
 
