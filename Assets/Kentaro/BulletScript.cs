@@ -20,7 +20,11 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag(""))
+        if(collision.gameObject.CompareTag("Finish"))
+        {
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.CompareTag(""))
         {
             Destroy(gameObject);
         }
