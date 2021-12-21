@@ -15,7 +15,7 @@ public class EnemyBulletBase : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag =="End")
+        if (collision.tag == "Player" || collision.tag =="Finish")
         {
             //プレイヤーコントローラーを呼んできてスコアを追加
             Destroy(this.gameObject);
