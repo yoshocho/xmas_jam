@@ -18,10 +18,6 @@ public class PlayerScript : MonoBehaviour,IDamage
     [SerializeField] float _playerSpeed = 10;
     Rigidbody2D _rb2d;
 
-    //public int PlayerHp { get => _playerHp; set => _playerHp = value; }
-
-
-    // Start is called before the first frame update
     void Start()
     {
         this.UpdateAsObservable()
