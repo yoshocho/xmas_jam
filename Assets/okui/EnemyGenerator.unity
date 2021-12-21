@@ -234,6 +234,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_enemy: {fileID: 4519744534337747779, guid: 6aeeebc4e0add4740a8152f3e735866a, type: 3}
+  m_interval: 3
+  m_time: 0
 --- !u!4 &1893718842
 Transform:
   m_ObjectHideFlags: 0
