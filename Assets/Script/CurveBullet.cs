@@ -10,6 +10,7 @@ public class CurveBullet : EnemyBulletBase
     [SerializeField] float _playerOffsetY = 5f;
     /// <summary>カーブする時にかける力</summary>
     [SerializeField] float _chasingPower = 1f;
+    [SerializeField] string _destroyAreaName = "Finish";
     Rigidbody2D _rb;
 
     /// <summary>曲がる方向</summary>
@@ -40,6 +41,13 @@ public class CurveBullet : EnemyBulletBase
                 // カーブする
                 _rb.AddForce(m_x * Vector2.right * _chasingPower);
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag(_destroyAreaName))
+        {
+
         }
     }
 }
