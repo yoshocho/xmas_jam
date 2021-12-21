@@ -33,7 +33,7 @@ public class EnemyGenerator : MonoBehaviour
         if (m_time > m_interval)
         {
             //インスタンス生成
-            Instantiate(m_enemy, new Vector3(-1, 1), Quaternion.identity);
+            Instantiate(m_enemy, transform.position, Quaternion.identity);
             //経過時間をリセットして再度計測スタート
             m_time = 0f;
         }
