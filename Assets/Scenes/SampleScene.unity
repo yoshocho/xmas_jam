@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 348589441}
   - component: {fileID: 348589443}
   m_Layer: 0
-  m_Name: "\u4EEE\u80CC\u666F\uFF12"
+  m_Name: ExampleBackScrene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mapSpeed: 2
+  m_resetPos: -10.55
+  m_appearPos: 21.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +313,7 @@ GameObject:
   - component: {fileID: 571573115}
   - component: {fileID: 571573117}
   m_Layer: 0
-  m_Name: "\u4EEE\u80CC\u666F\uFF12 (1)"
+  m_Name: ExampleBackScrene2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,6 +396,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mapSpeed: 2
+  m_resetPos: -10.55
+  m_appearPos: 21.1
 --- !u!1 &1896122468
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +410,7 @@ GameObject:
   - component: {fileID: 1896122469}
   - component: {fileID: 1896122471}
   m_Layer: 0
-  m_Name: "\u4EEE\u80CC\u666F\uFF12 (2)"
+  m_Name: ExampleBackScrene3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -489,3 +493,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_mapSpeed: 2
+  m_resetPos: -10.55
+  m_appearPos: 21.1

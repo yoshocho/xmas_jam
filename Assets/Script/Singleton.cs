@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 継承する事でシングトン化するクラス
+/// </summary>
+/// <typeparam name="TOwer">シングトン化させたいクラス</typeparam>
 public class Singleton<TOwer> : MonoBehaviour where TOwer : Singleton<TOwer> 
 {
     public static TOwer Instance { get; private set; } = null;
