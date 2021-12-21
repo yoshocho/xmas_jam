@@ -21,7 +21,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         this.UpdateAsObservable()
-            .Where(_ => Input.GetButton("Jump"))
+            .Where(_ => Input.GetButton("Jump") || Input.GetButton("Fire1"))
             .ThrottleFirstFrame(_shootIntervalFrame)
             .Subscribe(_ => ShotBullet());
 
