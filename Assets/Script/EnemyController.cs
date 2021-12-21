@@ -6,21 +6,12 @@ public class EnemyController : MonoBehaviour
 {
     [SerializeField,Tooltip("敵のライフ")] int _enemyLife = 1;
     [SerializeField, Tooltip("倒すと追加されるスコア")] int _score = 100;
-    [SerializeField, Tooltip("発射される弾のプレハブ")] GameObject _bullet;
-    [SerializeField, Tooltip("発射される弾のプレハブ")] GameObject _effectPrefab;
-    void Start()
-    {
-        
-    }
+    [SerializeField, Tooltip("エフェクトのプレハブ")] GameObject _effectPrefab;
 
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //もしPlayerの弾だったら
-        if (true)
+        if (collision.tag =="PlayerBullet")
         {
             //残機を減らす
             _enemyLife -= 1;
@@ -37,6 +28,10 @@ public class EnemyController : MonoBehaviour
                 Destroy(this.gameObject);
             }
             
+        }
+        if (collision.tag =="End")
+        {
+            Destroy(this.gameObject);
         }
     }
 }
