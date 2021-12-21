@@ -26,7 +26,7 @@ public class FadeSceneManager : MonoBehaviour
             fadePanel.color = panelColor;
             yield return null;
         }
-        if (sceneName.Length < 0)
+        if (sceneName.Length > 0)
         {
             SceneManager.LoadSceneAsync(sceneName);
         }

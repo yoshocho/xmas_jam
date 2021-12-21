@@ -6,10 +6,23 @@ using UnityEngine.SceneManagement;
 public class SceneManagerScript : MonoBehaviour
 {
     [SerializeField] string _name;
+    [SerializeField] float _waitingTime;
     // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        SceneManager.LoadScene(_name);
+        
+    }
+
+     IEnumerator ChangeScene(string name)
+    {
+        yield return new WaitForSeconds(_waitingTime);
+        SceneManager.LoadScene(name);
+    }
+
+    public void ChangeSceneAsync()
+    {
+        StartCoroutine(ChangeScene(_name));
     }
 
     // Update is called once per frame
