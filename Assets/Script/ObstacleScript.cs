@@ -2,11 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class ObstacleScript : MonoBehaviour
 {
-    [SerializeField] string _destroyAreaName = " ";
+    [SerializeField] string _destroyAreaName = "Finish";
     [SerializeField] EnemyBulletBase _bullet = default;
     [SerializeField] Transform _instancePos = default;
+
+    private void Awake()
+    {
+        var c = this.gameObject.GetComponent<CapsuleCollider2D>();
+        c.isTrigger = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(_destroyAreaName))
