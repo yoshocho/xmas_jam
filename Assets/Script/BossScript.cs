@@ -8,12 +8,25 @@ public class BossScript : MonoBehaviour
     [SerializeField, Tooltip("敵のライフ")] int _enemyLife = 1;
     [SerializeField, Tooltip("倒すと追加されるスコア")] int _score = 100;
     [SerializeField, Tooltip("エフェクトのプレハブ")] GameObject _effectPrefab;
-    [SerializeField] string _loadScene = " "
-;
+    [SerializeField] string _loadScene = " ";
+    [SerializeField] GameObject _boss2;
+    [SerializeField] float _timeLimit = 3;
     ScoreText _scoreText;
+    float _timer;
+    bool isOn;
     private void Start()
     {
         _scoreText = GameObject.Find("ScoreText").GetComponent<ScoreText>();
+    }
+    private void Update()
+    {
+        if(isOn)
+        {
+            _timer += Time.deltaTime;
+
+            if(_timer <= _timeLimit)
+            SceneManager.LoadScene(_loadScene);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,7 +57,7 @@ public class BossScript : MonoBehaviour
 
                 //自分を破棄
                 Destroy(this.gameObject);
-                SceneManager.LoadScene(_loadScene);
+                Instantiate(_boss2, this.transform.position, Quaternion.identity);
             }
 
         }
