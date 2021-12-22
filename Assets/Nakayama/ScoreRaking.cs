@@ -21,11 +21,6 @@ public class ScoreRaking : MonoBehaviour
         //_thirdRakingScore = GetComponent<Text>();
         gameManager = GameManager.Instance;
         RankingText();
-        gameManager.CurrentGameState
-            .DistinctUntilChanged()
-            .Where(_ => _ == GameState.RESULT)
-            .Subscribe(_ => RankingText());
-        
     }
 
     
