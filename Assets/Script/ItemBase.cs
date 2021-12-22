@@ -24,7 +24,7 @@ public abstract class ItemBase : MonoBehaviour
     }
     protected abstract void Excute();
     protected virtual void TimeUp(){}
-    private void OnTriggerEnter2D(Collider2D collision)
+   void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
