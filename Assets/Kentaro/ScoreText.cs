@@ -7,8 +7,9 @@ using DG.Tweening;
 public class ScoreText : MonoBehaviour
 {
     [SerializeField] float _scoreInterval = 0.5f;
-    Text _scoreText = default;
+    [SerializeField] Text _scoreText = default;
 
+    int _score = 0;
     GameManager _manager;
 
     // Start is called before the first frame update
@@ -22,9 +23,9 @@ public class ScoreText : MonoBehaviour
 
     public void AddScoreText(int score)
     {
-        int _score = 0;
+        _score = _manager.Score;
         int tempScore = _score;
-        _score = Mathf.Min(_score + _manager.Score);
+        _score = Mathf.Min(_score + score);
         
         DOTween.To(() => tempScore,
             x => tempScore = x,
