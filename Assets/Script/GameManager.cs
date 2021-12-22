@@ -16,9 +16,6 @@ public class GameManager : Singleton<GameManager>
 {
     int _score = 0;
     public int Score => _score;
-
-    int _keepScore = 0;
-
     public ReactiveProperty<GameState> CurrentGameState = new ReactiveProperty<GameState>();
 
     Subject<int> _scoreSubJect = new Subject<int>();
@@ -32,15 +29,11 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        CurrentGameState.DistinctUntilChanged()
-            .Where(x => x == GameState.GAME_OVER)
-            .Do(_ => ResetScore())
-            .Subscribe(_ => _scoreSubJect.OnNext(_keepScore));    
+       
     }
 
-    void ResetScore()
+    public void ResetScore()
     {
-        _keepScore = _score;
         _score = 0;
     }
 
