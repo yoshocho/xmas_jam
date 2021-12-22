@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce9744dfa899854780598e5a637ef86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limitTime: 30
+  _limitTime: 10
   _pauseManager: {fileID: 642621817}
 --- !u!4 &199535156
 Transform:
@@ -423,6 +423,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3889777486203679262, guid: 5fb449784a186ec489d6c196ba1bc1d6,
         type: 3}
+    - target: {fileID: 6408640347927811590, guid: b710adbbe7168454b96783f9d8390d75,
+        type: 3}
+      propertyPath: m_interval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6408640347927811591, guid: b710adbbe7168454b96783f9d8390d75,
         type: 3}
       propertyPath: m_Name
@@ -736,6 +741,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3889777486203679262, guid: e10cdc726a9e2564186979f9a06c6767,
         type: 3}
+    - target: {fileID: 6408640347927811590, guid: b710adbbe7168454b96783f9d8390d75,
+        type: 3}
+      propertyPath: m_interval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6408640347927811591, guid: b710adbbe7168454b96783f9d8390d75,
         type: 3}
       propertyPath: m_Name
@@ -1030,6 +1040,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9215206530951809490, guid: a9a03d1afdbe7424795a0ad7e1309a35,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9215206531295487324, guid: a9a03d1afdbe7424795a0ad7e1309a35,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 515674856045398726, guid: 286ba20ae0c94774884e326819d49a11,
+        type: 3}
+    - target: {fileID: 9215206531295487324, guid: a9a03d1afdbe7424795a0ad7e1309a35,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9215206531750795726, guid: a9a03d1afdbe7424795a0ad7e1309a35,
         type: 3}
       propertyPath: m_Name
@@ -1120,6 +1146,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSceneAsync
       objectReference: {fileID: 0}
+    - target: {fileID: 9215206532666374518, guid: a9a03d1afdbe7424795a0ad7e1309a35,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9215206532966423137, guid: a9a03d1afdbe7424795a0ad7e1309a35,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1130,7 +1161,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeSceneAsync
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9215206530951809490, guid: a9a03d1afdbe7424795a0ad7e1309a35, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a9a03d1afdbe7424795a0ad7e1309a35, type: 3}
 --- !u!223 &1216248473 stripped
 Canvas:
@@ -2894,6 +2926,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3889777486203679262, guid: 5fb449784a186ec489d6c196ba1bc1d6,
         type: 3}
+    - target: {fileID: 6408640347927811590, guid: b710adbbe7168454b96783f9d8390d75,
+        type: 3}
+      propertyPath: m_interval
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6408640347927811591, guid: b710adbbe7168454b96783f9d8390d75,
         type: 3}
       propertyPath: m_Name
