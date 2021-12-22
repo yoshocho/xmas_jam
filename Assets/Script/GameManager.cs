@@ -19,7 +19,7 @@ public class GameManager : Singleton<GameManager>
 
     int _keepScore = 0;
 
-    ReactiveProperty<GameState> CurrentGameState = new ReactiveProperty<GameState>();
+    public ReactiveProperty<GameState> CurrentGameState = new ReactiveProperty<GameState>();
 
     Subject<int> _scoreSubJect = new Subject<int>();
     IObservable<int> GameScore => _scoreSubJect;
