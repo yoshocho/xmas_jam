@@ -45,7 +45,7 @@ public class EnemyController : MonoBehaviour
             }
             
         }
-        if (collision.gameObject.tag =="End")
+        if (collision.gameObject.tag =="Finish")
         {
             Destroy(this.gameObject);
         }

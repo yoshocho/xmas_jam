@@ -25,6 +25,11 @@ public class SceneManagerScript : MonoBehaviour
         StartCoroutine(ChangeScene(_name));
     }
 
+    public void SceneReload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     // Update is called once per frame
     void Update()
     {
