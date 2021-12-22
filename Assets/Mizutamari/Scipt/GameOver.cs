@@ -9,6 +9,7 @@ using System;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] Image m_gameoverImage;
+    
     [SerializeField] PlayerScript m_player;
 
     Subject<Unit> m_scrollStopSubject = new Subject<Unit>();
@@ -20,6 +21,7 @@ public class GameOver : MonoBehaviour
         //_player.OnGameOver
         //    .Subscribe(_ => ScrollStop())
         //    .AddTo(this);
+        
     }
 
     // Update is called once per frame
@@ -28,11 +30,12 @@ public class GameOver : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             m_scrollStopSubject.OnNext(Unit.Default);
-            m_gameoverImage.DOFade(0.8f, 2.3f);
+            m_gameoverImage.DOFade(0.8f, 2.3f).SetLink(gameObject);
         }
     }
     public void ScrollStop()
-    {   
-        //m_gameoverImage.DOFade(0.5f, 3);   
+    {
+        //m_scrollStopSubject.OnNext(Unit.Default);
+        //m_gameoverImage.DOFade(0.8f, 2.3f).SetLink(gameObject);   
     }
 }
