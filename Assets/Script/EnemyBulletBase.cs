@@ -7,17 +7,27 @@ using UnityEngine;
 public class EnemyBulletBase : MonoBehaviour
 {
      protected Transform _playerPos;
-    [SerializeField, Tooltip("弾の速さ")] public int _bulletSpeed = 1;
+    protected PlayerScript _playerScript;
+    [SerializeField, Tooltip("弾の速さ")]
+    public int _bulletSpeed = 1;
+    [SerializeField, Tooltip("弾のダメージ")]
+    public int _bulletDamage = 1;
     void  Awake()
     {
         _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        _playerScript = _playerPos.GetComponent<PlayerScript>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player" || collision.tag =="Finish")
+        if (collision.tag == "Player")
         {
-            //プレイヤーコントローラーを呼んできてスコアを追加
+            Destroy(this.gameObject);
+            _playerScript._hp.Value -= _bulletDamage;
+            Debug.Log($"HPは{_playerScript._hp.Value}です");
+        }
+        else if (collision.tag == "Finish")
+        {
             Destroy(this.gameObject);
         }
     }
