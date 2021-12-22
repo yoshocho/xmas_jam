@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ce9744dfa899854780598e5a637ef86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limitTime: 10
+  _limitTime: 100
   _pauseManager: {fileID: 642621817}
 --- !u!4 &199535156
 Transform:
@@ -1049,7 +1049,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 515674856045398726, guid: 286ba20ae0c94774884e326819d49a11,
+      objectReference: {fileID: 21300000, guid: b87e891de8ba9c9439b05a59be8e8229,
         type: 3}
     - target: {fileID: 9215206531295487324, guid: a9a03d1afdbe7424795a0ad7e1309a35,
         type: 3}
@@ -1185,14 +1185,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2525353651246238622, guid: a4f7ce727580004448069d1f564d19b5,
         type: 3}
-      propertyPath: m_player
-      value: 
-      objectReference: {fileID: 546302842}
-    - target: {fileID: 2525353651246238622, guid: a4f7ce727580004448069d1f564d19b5,
-        type: 3}
       propertyPath: m_gameoverImage
       value: 
       objectReference: {fileID: 1103465034}
+    - target: {fileID: 2525353651246238622, guid: a4f7ce727580004448069d1f564d19b5,
+        type: 3}
+      propertyPath: m_player
+      value: 
+      objectReference: {fileID: 546302842}
     - target: {fileID: 3695584935249572839, guid: a4f7ce727580004448069d1f564d19b5,
         type: 3}
       propertyPath: m_gameOverText
@@ -1213,16 +1213,6 @@ PrefabInstance:
       propertyPath: m_gameOverText
       value: 
       objectReference: {fileID: 1090077369}
-    - target: {fileID: 3695584935591334735, guid: a4f7ce727580004448069d1f564d19b5,
-        type: 3}
-      propertyPath: m_restartButton
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3695584935591334735, guid: a4f7ce727580004448069d1f564d19b5,
-        type: 3}
-      propertyPath: m_goTitleButton
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3695584936226680994, guid: a4f7ce727580004448069d1f564d19b5,
         type: 3}
       propertyPath: m_LocalPosition.x
