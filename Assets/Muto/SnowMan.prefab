@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6202528675454228700}
   m_Layer: 0
   m_Name: SnowMan
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemyLife: 3
   _score: 100
-  _effectPrefab: {fileID: 0}
+  _effectPrefab: {fileID: 9055978519071877906, guid: 12770b3cd7b796948ac0ed0b9af9bca0,
+    type: 3}
 --- !u!1001 &6202528674344426164
 PrefabInstance:
   m_ObjectHideFlags: 0
