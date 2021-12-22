@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     ScoreText _scoreText;
     private void Start()
     {
-        //_scoreText = GameObject.Find("ScoreText").GetComponent<ScoreText>();
+        _scoreText = GameObject.Find("ScoreText").GetComponent<ScoreText>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -514,7 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadePanel: {fileID: 0}
   _startText: {fileID: 0}
-  sceneName: Main
+  sceneName: GameScene
   _fade: {fileID: 103699531}
 --- !u!4 &1553106208
 Transform:
