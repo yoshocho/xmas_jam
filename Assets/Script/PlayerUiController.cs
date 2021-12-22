@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using System;
 
-public class Test : MonoBehaviour
+public class PlayerUiController : MonoBehaviour
 {
     [SerializeField] PlayerScript _player;
 
     [SerializeField] GameObject[] _lifeIcons = default;
+
+    
+
     private void Start()
     {
         _player._hp
-            .Subscribe(playerhp => Test2(playerhp));
+            .Subscribe(playerhp => ApllyHp(playerhp));
     }
 
-    void Test2(int hp)
+    void ApllyHp(int hp)
     {
         if (hp >= 3)
         {

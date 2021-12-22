@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UniRx.Triggers;
+using System;
 public class PlayerScript : MonoBehaviour,IDamage
 {
     [SerializeField] Transform[] _muzzle;
@@ -15,6 +16,10 @@ public class PlayerScript : MonoBehaviour,IDamage
     [SerializeField]public bool _levelUp;
 
     [SerializeField]public float _playerSpeed = 10;
+
+    Subject<Unit> _gameOverSubject = new Subject<Unit>();
+    public IObservable<Unit> OnGameOver => _gameOverSubject;
+
     Rigidbody2D _rb2d;
 
 
@@ -62,5 +67,9 @@ public class PlayerScript : MonoBehaviour,IDamage
     public void AddDamage(int damage)
     {
         _hp.Value -= damage;
+        if (_hp.Value <= 0)
+        {
+            _gameOverSubject.OnNext(Unit.Default);
+        }
     }
 }
