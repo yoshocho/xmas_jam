@@ -11,9 +11,18 @@ public class MapController : MonoBehaviour
     [SerializeField] float m_resetPos;
     [SerializeField] float m_appearPos;
     [SerializeField] GameOver m_gameOver;
+    [SerializeField] Text m_gameOverText;
+    [SerializeField] Button m_restartButton;
+    [SerializeField] Button m_goTitleButton;
+    bool m_isGameOver = false;
+    public bool m_isStopScroll;
+
     // Start is called before the first frame update
     void Start()
     {
+        m_gameOverText.text = "";
+        m_isGameOver = false;
+        m_isStopScroll = false;
         m_gameOver.OnScrollStop
             .Subscribe(_ => StopScroll())
             .AddTo(this);
@@ -42,6 +51,25 @@ public class MapController : MonoBehaviour
             m_mapSpeed -= Time.deltaTime;
             yield return null;
         }
+        m_isGameOver = true;
+        GameOver();
 
     }
+    public void GameOver()
+    {
+        if(m_isGameOver == true)
+        {
+            m_gameOverText.text = "Game Over";
+            m_restartButton.gameObject.SetActive(true);
+            m_goTitleButton.gameObject.SetActive(true);
+        }
+    }
+    public void MapStop()
+    {
+        if(m_isStopScroll == true)
+        {
+            m_mapSpeed = 0;
+        }
+    }
+    
 }
