@@ -269,11 +269,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &890454948 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3729930513399237907, guid: 866499cd4da6441498ce6b6b0bd22c08,
+    type: 3}
+  m_PrefabInstance: {fileID: 3729930513428064847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091702841 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2928598669947899749, guid: 61243c3406cd6bc4e96ae663f6df6ca6,
     type: 3}
   m_PrefabInstance: {fileID: 2928598668858564444}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1330222934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3729930513501305248, guid: 866499cd4da6441498ce6b6b0bd22c08,
+    type: 3}
+  m_PrefabInstance: {fileID: 3729930513428064847}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1397305282
 GameObject:
@@ -698,6 +710,21 @@ PrefabInstance:
       propertyPath: _bullet
       value: 
       objectReference: {fileID: 1091702841}
+    - target: {fileID: 3729930514504211774, guid: 866499cd4da6441498ce6b6b0bd22c08,
+        type: 3}
+      propertyPath: _levelUp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3729930514504211774, guid: 866499cd4da6441498ce6b6b0bd22c08,
+        type: 3}
+      propertyPath: _muzzle.Array.data[0]
+      value: 
+      objectReference: {fileID: 890454948}
+    - target: {fileID: 3729930514504211774, guid: 866499cd4da6441498ce6b6b0bd22c08,
+        type: 3}
+      propertyPath: _muzzle.Array.data[1]
+      value: 
+      objectReference: {fileID: 1330222934}
     - target: {fileID: 3729930514504211775, guid: 866499cd4da6441498ce6b6b0bd22c08,
         type: 3}
       propertyPath: m_Name
