@@ -28,12 +28,14 @@ public class BombBullet : EnemyBulletBase
         if (_bombEffectPrefub && collision.tag == "Player")
         {
             //Playerに触れたら爆発のエフェクトを出す
-            Instantiate(_bombEffectPrefub, this.transform.position, this.transform.rotation);
+            var go = Instantiate(_bombEffectPrefub, this.transform.position, this.transform.rotation);
+            Destroy(go, 3f);
         }
         else if (_bombEffectPrefub && collision.tag == "PlayerBullet")
         {
             //Playerの弾に触れたら爆発して自分も消す
-            Instantiate(_bombEffectPrefub, this.transform.position, this.transform.rotation);
+            var go = Instantiate(_bombEffectPrefub, this.transform.position, this.transform.rotation);
+            Destroy(go, 3f);
             Destroy(this.gameObject);
         }
         base.OnTriggerEnter2D(collision);
