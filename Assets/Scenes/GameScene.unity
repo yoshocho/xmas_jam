@@ -2619,6 +2619,11 @@ PrefabInstance:
       propertyPath: _hp.value
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4216259231041404165, guid: 395fb1da96ef0e340953205c1b1683dc,
+        type: 3}
+      propertyPath: _levelUp
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4216259231041404185, guid: 395fb1da96ef0e340953205c1b1683dc,
         type: 3}
       propertyPath: m_Name
