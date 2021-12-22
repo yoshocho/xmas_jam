@@ -67,7 +67,7 @@ public class PlayerScript : MonoBehaviour,IDamage
             }
             else if (_levelUp)
             {
-                for (int i = 0; i < _muzzle.Length; i++)
+                for (int i = 1; i < _muzzle.Length; i++)
                 {
                     Instantiate(_bullet, _muzzle[i].position, _muzzle[i].rotation);
                 }
