@@ -8,6 +8,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField, Tooltip("倒すと追加されるスコア")] int _score = 100;
     [SerializeField, Tooltip("エフェクトのプレハブ")] GameObject _effectPrefab;
 
+    ScoreText _scoreText;
+    private void Start()
+    {
+        _scoreText = GameObject.Find("ScoreText").GetComponent<ScoreText>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
@@ -30,7 +36,9 @@ public class EnemyController : MonoBehaviour
                 {
                     Instantiate(_effectPrefab, this.transform.position, _effectPrefab.transform.rotation);
                 }
+                _scoreText.AddScoreText(_score);
                 GameManager.Instance.AddScore(_score);
+                
                 //自分を破棄
                 Destroy(this.gameObject);
             }
