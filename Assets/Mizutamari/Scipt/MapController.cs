@@ -15,7 +15,7 @@ public class MapController : MonoBehaviour
     [SerializeField] Button m_restartButton;
     [SerializeField] Button m_goTitleButton;
     bool m_isGameOver = false;
-    public bool m_isStopScroll;
+    bool m_isStopScroll;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,7 @@ public class MapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!m_isStopScroll)
         MapScroll();
     }
     public void MapScroll()
@@ -57,7 +58,7 @@ public class MapController : MonoBehaviour
     }
     public void GameOver()
     {
-        if(m_isGameOver == true)
+        if(m_isGameOver == true && m_gameOverText && m_restartButton && m_goTitleButton)
         {
             m_gameOverText.text = "Game Over";
             m_restartButton.gameObject.SetActive(true);
@@ -66,10 +67,7 @@ public class MapController : MonoBehaviour
     }
     public void MapStop()
     {
-        if(m_isStopScroll == true)
-        {
-            m_mapSpeed = 0;
-        }
+        m_isStopScroll = true;
     }
     
 }

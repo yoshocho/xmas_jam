@@ -43,11 +43,11 @@ public class CurveBullet : EnemyBulletBase
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag(_destroyAreaName))
-        {
-
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if(collision.CompareTag(_destroyAreaName))
+    //    {
+    //        Destroy(this.gameObject);
+    //    }
+    //}
 }

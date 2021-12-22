@@ -34,7 +34,8 @@ public class EnemyController : MonoBehaviour
                 //倒したエフェクトを表示
                 if (_effectPrefab)
                 {
-                    Instantiate(_effectPrefab, this.transform.position, _effectPrefab.transform.rotation);
+                    var go = Instantiate(_effectPrefab, this.transform.position, this.transform.rotation);
+                    Destroy(go, 3f);
                 }
                 _scoreText.AddScoreText(_score);
                 GameManager.Instance.AddScore(_score);
