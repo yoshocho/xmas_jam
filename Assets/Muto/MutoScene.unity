@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &233621325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7482216914188590453, guid: 067df2e9482e93c47beff2bd23bbacb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6202528675003738763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &239083674
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +514,12 @@ MonoBehaviour:
   _shootIntervalFrame: 30
   _levelUp: 0
   _playerSpeed: 10
+--- !u!4 &1199328016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4682042052720865289, guid: 067df2e9482e93c47beff2bd23bbacb4,
+    type: 3}
+  m_PrefabInstance: {fileID: 6202528675003738763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1904745763
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,8 +572,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyAreaName: Finish
-  _bullet: {fileID: 1274956579683829833, guid: b2c259020b1d4d342908e345f474c01f, type: 3}
-  _instancePos: {fileID: 0}
+  _bullets: []
+  _instancePos: []
 --- !u!212 &1904745766
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -929,10 +941,68 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6202528674775879705, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _bullets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _instancePos.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _bullets.Array.data[0]
+      value: 
+      objectReference: {fileID: 9203146730956190515, guid: 12770b3cd7b796948ac0ed0b9af9bca0,
+        type: 3}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _instancePos.Array.data[0]
+      value: 
+      objectReference: {fileID: 233621325}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _instancePos.Array.data[1]
+      value: 
+      objectReference: {fileID: 1199328016}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _bullets.Array.data[1]
+      value: 
+      objectReference: {fileID: 1274956579683829833, guid: b2c259020b1d4d342908e345f474c01f,
+        type: 3}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _instancePos.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _instancePos.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228696, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: _bullets.Array.data[2]
+      value: 
+      objectReference: {fileID: 1274956579683829833, guid: df8eed6e92140bf409dec96d7ffe07b0,
+        type: 3}
     - target: {fileID: 6202528675454228697, guid: 067df2e9482e93c47beff2bd23bbacb4,
         type: 3}
       propertyPath: m_Name
       value: SnowMan
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202528675454228701, guid: 067df2e9482e93c47beff2bd23bbacb4,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6202528675454228702, guid: 067df2e9482e93c47beff2bd23bbacb4,
         type: 3}

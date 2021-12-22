@@ -6,8 +6,8 @@ using UnityEngine;
 public class ObstacleScript : MonoBehaviour
 {
     [SerializeField] string _destroyAreaName = "Finish";
-    [SerializeField] EnemyBulletBase _bullet = default;
-    [SerializeField] Transform _instancePos = default;
+    [SerializeField] EnemyBulletBase[] _bullets = default;
+    [SerializeField] Transform[] _instancePos = default;
 
     private void Awake()
     {
@@ -24,15 +24,24 @@ public class ObstacleScript : MonoBehaviour
     }
     public void CreateBullet()
     {
-        if (_bullet)
+        if (_bullets[0])
         {
-            if (_instancePos)
+            if (_instancePos[0])
             {
-                Instantiate(_bullet, _instancePos.position, Quaternion.identity);
+                for (int i = 0; i < _instancePos.Length; i++)
+                {
+                    var bulletRange = Random.Range(0, _bullets.Length);//弾とポジションをランダムで決める
+                    //var posRange = Random.Range(0, _instancePos.Length);
+                    Instantiate(_bullets[bulletRange], _instancePos[i].position, Quaternion.identity);
+                }
             }
-            else
+            else//発射地点が何も設定されていない
             {
-                Instantiate(_bullet, this.transform.position, Quaternion.identity);
+                for (int i = 0; i < _bullets.Length; i++)
+                {
+                    var bulletRange = Random.Range(0, _bullets.Length + 1);
+                    Instantiate(_bullets[bulletRange], this.transform.position, Quaternion.identity);
+                }
             }
         }
         else
