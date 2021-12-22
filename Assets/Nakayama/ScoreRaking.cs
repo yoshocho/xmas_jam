@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UniRx;
+using UnityEngine.SceneManagement;
 
 public class ScoreRaking : Singleton<ScoreRaking>
 {
@@ -11,7 +12,9 @@ public class ScoreRaking : Singleton<ScoreRaking>
     [SerializeField] Text _secondRankingScore = default;
     [SerializeField] Text _thirdRankingScore = default;
     [SerializeField] Text _yourScore = default;
-    int[] _rankingScore = new int[4] {0,0,0,0};
+
+    [SerializeField] Canvas _canvas;
+    int[] _rankingScore = new int[4] { 0, 0, 0, 0 };
 
     GameManager gameManager;
 
@@ -20,10 +23,24 @@ public class ScoreRaking : Singleton<ScoreRaking>
         //_firstRakingScore = GetComponent<Text>();
         //_secondRakingScore = GetComponent<Text>();
         //_thirdRakingScore = GetComponent<Text>();
+        SceneManager.sceneLoaded += SceneLoaded;
         gameManager = GameManager.Instance;
 
-        RankingText();
+        //RankingText();
         DontDestroyOnLoad(gameObject);
+    }
+
+    void SceneLoaded(Scene nextScene, LoadSceneMode mode)
+    {
+        if (nextScene.name == "Result")
+        {
+            _canvas.gameObject.SetActive(true);
+            RankingText();
+        }
+        else
+        {
+            _canvas.gameObject.SetActive(false);
+        }
     }
     void RankingText()
     {
