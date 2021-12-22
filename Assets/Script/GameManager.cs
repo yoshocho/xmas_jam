@@ -6,6 +6,8 @@ public class GameManager : Singleton<GameManager>
 {
     int _score = 0;
 
+    public int Score => _score;
+
     protected override void OnAwake()
     {
         base.OnAwake();
