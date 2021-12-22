@@ -14,13 +14,15 @@ public class EnemyGenerator : MonoBehaviour
     /// <summary>経過時間</summary>
     [SerializeField]
     public float m_time = 0;
-    [SerializeField] PauseManager _pauseManager;
+    PauseManager _pauseManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_interval = 3f;
+        _pauseManager = PauseManager.Instance;
         _pauseManager.OnPauseResume += SelfEnabled;
+        m_interval = 3f;
+        
     }
 
     // Update is called once per frame

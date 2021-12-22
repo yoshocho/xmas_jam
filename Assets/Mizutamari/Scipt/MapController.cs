@@ -26,6 +26,7 @@ public class MapController : MonoBehaviour
         m_gameOverText.text = "";
         m_isGameOver = false;
         m_isStopScroll = false;
+        _pauseManager = PauseManager.Instance;
         m_gameOver.OnScrollStop
             .Subscribe(_ => StopScroll())
             .AddTo(this);
@@ -65,8 +66,8 @@ public class MapController : MonoBehaviour
         if(m_isGameOver == true && m_gameOverText && m_restartButton && m_goTitleButton)
         {
             m_gameOverText.text = "Game Over";
-            m_restartButton.gameObject.SetActive(true);
-            m_goTitleButton.gameObject.SetActive(true);
+            m_restartButton?.gameObject.SetActive(true);
+            m_goTitleButton?.gameObject.SetActive(true);
         }
     }
     public void MapStop()

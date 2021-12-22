@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager : Singleton<PauseManager>
 {
     /// <summary>ポーズに必要な関数を格納するAction</summary>
     event Action<bool> _onPauseResume;
