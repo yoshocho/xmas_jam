@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ItemBase : MonoBehaviour
 {
     [SerializeField,Tooltip("アイテムの制限時間")] float _limitTime  =20;
-    [SerializeField, Tooltip("アイテムの移動先")] Transform _itemPosition;
+    [SerializeField, Tooltip("アイテムの移動先")] Vector3 _itemPosition;
     /// <summary>プレイヤーのPlayerScript </summary>
     protected PlayerScript _playerScript = default;
     float _timer = 0f;
@@ -30,7 +30,7 @@ public abstract class ItemBase : MonoBehaviour
         {
             Excute();
             //どっか違うとこに移動させる
-            this.transform.position = _itemPosition.position;
+            this.transform.position = _itemPosition;
         }
     }
 }
