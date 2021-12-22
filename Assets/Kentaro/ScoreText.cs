@@ -33,11 +33,5 @@ public class ScoreText : MonoBehaviour
             _scoreInterval)
             .OnUpdate(() => _scoreText.text = tempScore.ToString("D8"))
             .OnStepComplete(() => _scoreText.text = _score.ToString("D8"));
-
-        //DOTween.To(() => tempScore, x =>
-        //{
-        //    tempScore = x;
-        //    _scoreText.text = tempScore.ToString("00000000");
-        //}, _manager.Score, _scoreInterval).OnComplete(() => _scoreText.text = _manager.Score.ToString("00000000"));
     }
 }
