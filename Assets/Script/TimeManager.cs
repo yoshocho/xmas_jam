@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using UnityEngine.SceneManagement;
+using UniRx;
 public class TimeManager : MonoBehaviour
 {
     /// <summary>タイマー</summary>
@@ -12,9 +13,12 @@ public class TimeManager : MonoBehaviour
     /// <summary>タイマーが動くためのフラグ</summary>
     bool isTimer = true;
     [SerializeField, Tooltip("ポーズマネージャー")] PauseManager _pauseManager;
+
+    PlayerScript _player;
     void Start()
     {
         _pauseManager.OnPauseResume += TimerActive;
+        _player.OnGameOver.Subscribe(_ => isTimer = false);
     }
 
 
@@ -29,6 +33,7 @@ public class TimeManager : MonoBehaviour
         {
             //タイムラインな流す
             //ジェネレーターを止める
+            SceneManager.LoadSceneAsync("BossScene");
         }
     }
 

@@ -389,9 +389,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyAreaName: Finish
   _bullets:
-  - {fileID: 1274956579683829833, guid: df8eed6e92140bf409dec96d7ffe07b0, type: 3}
-  - {fileID: 1274956579683829833, guid: b2c259020b1d4d342908e345f474c01f, type: 3}
-  - {fileID: 9203146730956190515, guid: 12770b3cd7b796948ac0ed0b9af9bca0, type: 3}
+  - {fileID: 4546248065247556508, guid: c8868481e85860946b70966139631cbf, type: 3}
+  - {fileID: 5153948004046484502, guid: 5aa10389eb11fb1458626863b1c73339, type: 3}
+  - {fileID: 4279986261836125942, guid: f158fbc4d8c1f2e468f4926ce432bd5c, type: 3}
   _instancePos:
   - {fileID: 2106308696}
   - {fileID: 1712744226}
@@ -1286,7 +1286,7 @@ PrefabInstance:
     - target: {fileID: 4216259231041404165, guid: 395fb1da96ef0e340953205c1b1683dc,
         type: 3}
       propertyPath: _hp.value
-      value: 1
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4216259231041404185, guid: 395fb1da96ef0e340953205c1b1683dc,
         type: 3}
