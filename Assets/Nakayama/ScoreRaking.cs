@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 using UniRx;
 
-public class ScoreRaking : MonoBehaviour
+public class ScoreRaking : Singleton<ScoreRaking>
 {
     [SerializeField] Text _firstRankingScore = default;
     [SerializeField] Text _secondRankingScore = default;
@@ -21,14 +21,10 @@ public class ScoreRaking : MonoBehaviour
         //_secondRakingScore = GetComponent<Text>();
         //_thirdRakingScore = GetComponent<Text>();
         gameManager = GameManager.Instance;
+
         RankingText();
+        DontDestroyOnLoad(gameObject);
     }
-
-    void Update()
-    {
-       
-    }
-
     void RankingText()
     {
         _rankingScore[0] = gameManager.Score;
