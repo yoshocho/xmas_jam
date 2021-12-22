@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UnityEngine.UI;
+using System;
 
 
 public class MapController : MonoBehaviour
@@ -14,6 +15,8 @@ public class MapController : MonoBehaviour
     [SerializeField] Text m_gameOverText;
     [SerializeField] Button m_restartButton;
     [SerializeField] Button m_goTitleButton;
+    [SerializeField, Tooltip("ポーズを管理するマネージャー")]
+    PauseManager _pauseManager = default;
     bool m_isGameOver = false;
     bool m_isStopScroll;
 
@@ -26,6 +29,7 @@ public class MapController : MonoBehaviour
         m_gameOver.OnScrollStop
             .Subscribe(_ => StopScroll())
             .AddTo(this);
+        _pauseManager.OnPauseResume += SelfEnabled;
     }
 
     // Update is called once per frame
@@ -69,5 +73,8 @@ public class MapController : MonoBehaviour
     {
         m_isStopScroll = true;
     }
-    
+    void SelfEnabled(bool isactive)
+    {
+        this.enabled = isactive;
+    }
 }

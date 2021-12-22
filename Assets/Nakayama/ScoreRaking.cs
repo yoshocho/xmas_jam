@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UniRx;
 
 public class ScoreRaking : MonoBehaviour
 {
@@ -20,10 +21,8 @@ public class ScoreRaking : MonoBehaviour
         //_thirdRakingScore = GetComponent<Text>();
         gameManager = GameManager.Instance;
         RankingText();
-        
     }
 
-    
     // Update is called once per frame
     void Update()
     {
