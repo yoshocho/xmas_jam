@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _limitTime: 20
-  _itemPosition: {fileID: 0}
+  _itemPosition: {x: 500, y: 0, z: 0}
 --- !u!61 &8771278439326426501
 BoxCollider2D:
   m_ObjectHideFlags: 0
