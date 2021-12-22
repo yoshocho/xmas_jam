@@ -428,6 +428,8 @@ MonoBehaviour:
   _score: 5000
   _effectPrefab: {fileID: 0}
   _loadScene: Result
+  _boss2: {fileID: 0}
+  _timeLimit: 3
 --- !u!95 &221320495
 Animator:
   serializedVersion: 3
@@ -590,7 +592,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &468646525
 PrefabInstance:
@@ -1080,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 7900303489531567629, guid: 08e3f00cd7f3b4241814b4368fbdff6f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7900303489531567629, guid: 08e3f00cd7f3b4241814b4368fbdff6f,
         type: 3}
