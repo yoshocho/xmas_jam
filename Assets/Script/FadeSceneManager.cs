@@ -10,7 +10,7 @@ public class FadeSceneManager : MonoBehaviour
 
     public void FadeScene(string sceneName, float fadeTime = 0.5f)
     {
-        StartCoroutine(FadeSceneAsync(sceneName,fadeTime));
+        StartCoroutine(FadeSceneAsync(sceneName, fadeTime));
     }
     
     IEnumerator FadeSceneAsync(string sceneName, float fadeTime = 0.5f)
