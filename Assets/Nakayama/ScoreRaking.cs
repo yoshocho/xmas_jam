@@ -3,46 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UniRx;
+using UnityEngine.SceneManagement;
 
-public class ScoreRaking : MonoBehaviour
+public class ScoreRaking : Singleton<ScoreRaking>
 {
-    [SerializeField] Text _firstRakingScore = default;
-    [SerializeField] Text _secondRakingScore = default;
-    [SerializeField] Text _thirdRakingScore = default;
-    int[] _rakingScore = new int[4] {0,0,0,0};
+    [SerializeField] Text _firstRankingScore = default;
+    [SerializeField] Text _secondRankingScore = default;
+    [SerializeField] Text _thirdRankingScore = default;
+    [SerializeField] Text _yourScore = default;
+
+    [SerializeField] Canvas _canvas;
+    int[] _rankingScore = new int[4] { 0, 0, 0, 0 };
 
     GameManager gameManager;
-    // Start is called before the first frame update
+
     void Start()
     {
         //_firstRakingScore = GetComponent<Text>();
         //_secondRakingScore = GetComponent<Text>();
         //_thirdRakingScore = GetComponent<Text>();
+        SceneManager.sceneLoaded += SceneLoaded;
         gameManager = GameManager.Instance;
-        RankingText();
-        
+
+        //RankingText();
+        DontDestroyOnLoad(gameObject);
     }
 
-    
-    // Update is called once per frame
-    void Update()
+    void SceneLoaded(Scene nextScene, LoadSceneMode mode)
     {
-        //for (int i = 0; i < _rakingScore.Length; i++)
-        //{
-        //    if (gameManager.Score > _rakingScore[i])
-        //    {
-        //        _rakingScore[i] = gameManager.Score;
-        //    }
-        //}
+        if (nextScene.name == "Result")
+        {
+            _canvas.gameObject.SetActive(true);
+            RankingText();
+        }
+        else
+        {
+            _canvas.gameObject.SetActive(false);
+        }
     }
-
     void RankingText()
     {
-        _rakingScore[0] = gameManager.Score;
-        Array.Sort(_rakingScore);
-        _firstRakingScore.text = "1位:" + _rakingScore[3];
-        _secondRakingScore.text = "2位:" + _rakingScore[2];
-        _thirdRakingScore.text = "3位:" + _rakingScore[1];
+        _rankingScore[0] = gameManager.Score;
+        Array.Sort(_rankingScore);
+        _firstRankingScore.text = "1位:" + _rankingScore[3].ToString("D8");
+        _secondRankingScore.text = "2位:" + _rankingScore[2].ToString("D8");
+        _thirdRankingScore.text = "3位:" + _rankingScore[1].ToString("D8");
+        _yourScore.text = gameManager.Score.ToString("D8");
 
     }
 }

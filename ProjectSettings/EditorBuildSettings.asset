@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Nakayama/Main.unity
+    guid: 0f0d3b61a683c03458fa020ae376ad06
+  - enabled: 1
+    path: Assets/Nakayama/Result.unity
+    guid: 258008e97e988a84a8768820338e8dfa
+  - enabled: 1
+    path: Assets/Nakayama/TitleExample1.unity
+    guid: 1f877b942b6b0084ab8d40ecf0700948
+  - enabled: 1
+    path: Assets/Nakayama/Explanation.unity
+    guid: 7cefff7307144ba4b9909851d49e13d6
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

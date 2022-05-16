@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using UnityEngine.UI;
+using System;
 
 
 public class MapController : MonoBehaviour
@@ -14,8 +15,10 @@ public class MapController : MonoBehaviour
     [SerializeField] Text m_gameOverText;
     [SerializeField] Button m_restartButton;
     [SerializeField] Button m_goTitleButton;
+    [SerializeField, Tooltip("ポーズを管理するマネージャー")]
+    PauseManager _pauseManager = default;
     bool m_isGameOver = false;
-    public bool m_isStopScroll;
+    bool m_isStopScroll;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +26,17 @@ public class MapController : MonoBehaviour
         m_gameOverText.text = "";
         m_isGameOver = false;
         m_isStopScroll = false;
+        _pauseManager = PauseManager.Instance;
         m_gameOver.OnScrollStop
             .Subscribe(_ => StopScroll())
             .AddTo(this);
+        _pauseManager.OnPauseResume += SelfEnabled;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(!m_isStopScroll)
         MapScroll();
     }
     public void MapScroll()
@@ -57,19 +63,19 @@ public class MapController : MonoBehaviour
     }
     public void GameOver()
     {
-        if(m_isGameOver == true)
+        if(m_isGameOver == true && m_gameOverText && m_restartButton && m_goTitleButton)
         {
             m_gameOverText.text = "Game Over";
-            m_restartButton.gameObject.SetActive(true);
-            m_goTitleButton.gameObject.SetActive(true);
+            m_restartButton?.gameObject.SetActive(true);
+            m_goTitleButton?.gameObject.SetActive(true);
         }
     }
     public void MapStop()
     {
-        if(m_isStopScroll == true)
-        {
-            m_mapSpeed = 0;
-        }
+        m_isStopScroll = true;
     }
-    
+    void SelfEnabled(bool isactive)
+    {
+        this.enabled = isactive;
+    }
 }

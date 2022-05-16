@@ -7,9 +7,11 @@ using UnityEngine.SceneManagement;
 public class FadeSceneManager : MonoBehaviour
 {
     [SerializeField] Image fadePanel = default;
+    [SerializeField] GameObject _startText;
 
     public void FadeScene(string sceneName, float fadeTime = 0.5f)
     {
+        _startText?.SetActive(false);
         StartCoroutine(FadeSceneAsync(sceneName, fadeTime));
     }
     

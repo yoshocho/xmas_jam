@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour,IDamage
 
     Rigidbody2D _rb2d;
 
+    bool _playerControll = true;
 
     // Start is called before the first frame update
     void Start()
@@ -42,24 +43,34 @@ public class PlayerScript : MonoBehaviour,IDamage
 
     void PlayerMove()
     {
-        float x = Input.GetAxisRaw("Horizontal") * _playerSpeed;
-        float y = Input.GetAxisRaw("Vertical") * _playerSpeed;
+        if (_playerControll)
+        {
+            float x = Input.GetAxisRaw("Horizontal") * _playerSpeed;
+            float y = Input.GetAxisRaw("Vertical") * _playerSpeed;
 
-        _rb2d.velocity = new Vector2(x, y);
+            _rb2d.velocity = new Vector2(x, y);
+        }
+        else
+        {
+            _rb2d.velocity = Vector2.zero;
+        }
+        
     }
 
     public void ShotBullet()
     {
-
-        if (!_levelUp)
+        if (_playerControll)
         {
-            Instantiate(_bullet, _muzzle[0].position, _muzzle[0].rotation);
-        }
-        else if (_levelUp)
-        {
-            for (int i = 0; i < _muzzle.Length; i++)
+            if (!_levelUp)
             {
-                Instantiate(_bullet, _muzzle[i].position, _muzzle[i].rotation);
+                Instantiate(_bullet, _muzzle[0].position, _muzzle[0].rotation);
+            }
+            else if (_levelUp)
+            {
+                for (int i = 1; i < _muzzle.Length; i++)
+                {
+                    Instantiate(_bullet, _muzzle[i].position, _muzzle[i].rotation);
+                }
             }
         }
     }
@@ -69,6 +80,7 @@ public class PlayerScript : MonoBehaviour,IDamage
         _hp.Value -= damage;
         if (_hp.Value <= 0)
         {
+            _playerControll = false;
             _gameOverSubject.OnNext(Unit.Default);
         }
     }
